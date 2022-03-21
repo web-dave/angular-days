@@ -11,7 +11,8 @@
         },
         "@schematics/angular:application": {
           "strict": true,
-          "skipTests": true
+          "skipTests": true,
+          "inlineStyle": true
         }
       },
       "root": "",
