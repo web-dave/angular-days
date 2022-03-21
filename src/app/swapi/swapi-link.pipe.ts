@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SwapiLinkPipe implements PipeTransform {
   transform(url: string): string {
-    return url.replace('https://swapi.dev/api/', '').slice(0, -1);
+    return url.split('/').slice(0, -1).pop() as string;
   }
 }
