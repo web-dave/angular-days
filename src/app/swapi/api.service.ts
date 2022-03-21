@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+export interface ISwapiResponse {
+  count: number;
+  next: string | null;
+  previouse: string | null;
+  results: { [key: string]: string | string[] }[];
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -15,9 +21,9 @@ export class ApiService {
   };
   constructor(private http: HttpClient) {}
 
-  getList(name: string) {
-    return this.http.get<{ [key: string]: string | string[] }[]>(
-      this.urls[name]
-    );
+  getList(
+    name: 'films' | 'people' | 'planets' | 'species' | 'starships' | 'vehicles'
+  ) {
+    return this.http.get<ISwapiResponse>(this.urls[name]);
   }
 }
