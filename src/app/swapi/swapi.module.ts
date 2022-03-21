@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilmsComponent } from './films/films.component';
 import { SwapiRoutingModule } from './swapi-routing.module';
 import { SwapiLinkPipe } from './swapi-link.pipe';
+import { FilmComponent } from './film/film.component';
 
 @NgModule({
-  declarations: [FilmsComponent, SwapiLinkPipe],
+  declarations: [FilmsComponent, SwapiLinkPipe, FilmComponent],
   imports: [CommonModule, HttpClientModule, SwapiRoutingModule],
 })
 export class SwapiModule {}

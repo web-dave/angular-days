@@ -26,4 +26,11 @@ export class ApiService {
   ) {
     return this.http.get<ISwapiResponse>(this.urls[name]);
   }
+
+  getElement(
+    name: 'films' | 'people' | 'planets' | 'species' | 'starships' | 'vehicles',
+    id: number
+  ) {
+    return this.http.get<ISwapiResponse>(this.urls[name] + id);
+  }
 }
