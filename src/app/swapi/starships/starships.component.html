@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Manufacturer</th>
+    <th>link</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let starship of starships">
+      <td>{{ starship["name"] }}</td>
+      <td>{{ starship["manufacturer"] }}</td>
+      <td><a [routerLink]="starship['url']">mehr</a></td>
+    </tr>
+  </tbody>
+</table>
