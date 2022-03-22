@@ -13,6 +13,7 @@ export class FilmsComponent implements OnInit {
     producer: string;
     url: string;
   }[] = [];
+
   constructor(private service: ApiService) {}
 
   ngOnInit(): void {

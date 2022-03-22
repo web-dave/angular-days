@@ -8,7 +8,7 @@
     <tr *ngFor="let starship of starships">
       <td>{{ starship["name"] }}</td>
       <td>{{ starship["manufacturer"] }}</td>
-      <td><a [routerLink]="starship['url']">mehr</a></td>
+      <td><a [routerLink]="starship.url | swapiLink">mehr</a></td>
     </tr>
   </tbody>
 </table>
