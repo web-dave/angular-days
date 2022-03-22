@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService, IFilm } from '../api.service';
 
 @Component({
   selector: 'app-films',
@@ -7,12 +7,7 @@ import { ApiService } from '../api.service';
   styles: [],
 })
 export class FilmsComponent implements OnInit {
-  films: {
-    title: string;
-    director: string;
-    producer: string;
-    url: string;
-  }[] = [];
+  films: IFilm[] = [];
 
   constructor(private service: ApiService) {}
 

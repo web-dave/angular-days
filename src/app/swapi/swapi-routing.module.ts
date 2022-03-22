@@ -13,6 +13,9 @@ const routes: Routes = [
   {
     path: 'films/:id',
     component: FilmComponent,
+    data: {
+      hurz: 'Hurbelwonz',
+    },
   },
   {
     path: 'starships',

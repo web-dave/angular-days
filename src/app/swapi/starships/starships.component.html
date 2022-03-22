@@ -5,7 +5,7 @@
     <th>link</th>
   </thead>
   <tbody>
-    <tr *ngFor="let starship of starships">
+    <tr *ngFor="let starship of starships$ | async">
       <td>{{ starship["name"] }}</td>
       <td>{{ starship["manufacturer"] }}</td>
       <td><a [routerLink]="starship.url | swapiLink">mehr</a></td>
