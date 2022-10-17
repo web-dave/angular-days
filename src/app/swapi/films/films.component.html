@@ -1,1 +1,14 @@
-<p>films works!</p>
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Director</th>
+    <th>Producer</th>
+    <th>link</th>
+  </tr>
+  <tr *ngFor="let film of data?.results">
+    <td>{{ film["title"] }}</td>
+    <td>{{ film["director"] }}</td>
+    <td>{{ film["producer"] }}</td>
+    <td><a [routerLink]="film['url']">Mehr</a></td>
+  </tr>
+</table>
