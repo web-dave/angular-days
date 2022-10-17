@@ -11,7 +11,6 @@ export interface ISwapiResponse {
 
 @Injectable()
 export class ApiService {
-  store: ISwapiResponse | undefined;
   private urls: { [key: string]: string } = {
     films: 'https://swapi.dev/api/films/',
     people: 'https://swapi.dev/api/people/',
@@ -23,10 +22,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getList(name: string): Observable<ISwapiResponse> {
-    return this.store
-      ? of(this.store)
-      : this.http
-          .get<ISwapiResponse>(this.urls[name])
-          .pipe(tap((data) => (this.store = data)));
+    return this.http.get<ISwapiResponse>(this.urls[name]);
   }
 }
