@@ -8,6 +8,9 @@ export interface ISwapiResponse {
   previouse: string | null;
   results: { [key: string]: string | string[] }[];
 }
+export interface ISwapiItemResponse {
+  [key: string]: string | string[];
+}
 
 @Injectable()
 export class ApiService {
@@ -23,5 +26,8 @@ export class ApiService {
 
   getList(name: string): Observable<ISwapiResponse> {
     return this.http.get<ISwapiResponse>(this.urls[name]);
+  }
+  getItem(name: string, id: string): Observable<ISwapiItemResponse> {
+    return this.http.get<ISwapiItemResponse>(this.urls[name] + '/' + id);
   }
 }
