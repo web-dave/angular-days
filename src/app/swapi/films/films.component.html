@@ -1,3 +1,6 @@
+<!-- <div *ngIf="data">
+  <pre>{{ data.results[0] | json }}</pre>
+</div> -->
 <table>
   <tr>
     <th>Titel</th>
@@ -5,7 +8,8 @@
     <th>Producer</th>
     <th>link</th>
   </tr>
-  <tr *ngFor="let film of data?.results">
+  <tr *ngFor="let film of (response$ | async)?.results">
+    <!-- <tr *ngFor="let film of data?.results"> -->
     <td>{{ film["title"] }}</td>
     <td>{{ film["director"] }}</td>
     <td>{{ film["producer"] }}</td>
