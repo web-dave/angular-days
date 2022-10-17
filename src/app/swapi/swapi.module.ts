@@ -5,9 +5,10 @@ import { FilmsComponent } from './films/films.component';
 import { SwapiRoutingModule } from './swapi-routing.module';
 import { ApiService } from './api.service';
 import { StarshipsComponent } from './starships/starships.component';
+import { SwapiLinkPipe } from './swapi-link.pipe';
 
 @NgModule({
-  declarations: [FilmsComponent, StarshipsComponent],
+  declarations: [FilmsComponent, StarshipsComponent, SwapiLinkPipe],
   imports: [CommonModule, HttpClientModule, SwapiRoutingModule],
   providers: [ApiService],
 })

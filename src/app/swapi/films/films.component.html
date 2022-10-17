@@ -13,6 +13,6 @@
     <td>{{ film["title"] }}</td>
     <td>{{ film["director"] }}</td>
     <td>{{ film["producer"] }}</td>
-    <td><a [routerLink]="film['url']">Mehr</a></td>
+    <td><a [routerLink]="film['url'] | swapiLink">Mehr</a></td>
   </tr>
 </table>
